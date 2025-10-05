@@ -3,7 +3,7 @@ import { Send, Loader2, Mic, Video, Phone } from 'lucide-react';
 import { ChatMessage } from './ChatMessage';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../lib/supabase';
-import { getAbogaResponse } from '../lib/abogaAssistant';
+import { getGeminiResponse } from '../lib/geminiService';
 import type { Database } from '../lib/supabase';
 
 type Message = Database['public']['Tables']['chat_messages']['Row'];
@@ -103,7 +103,7 @@ export function Chat() {
         content: userMessage,
       });
 
-      const abogaResponse = await getAbogaResponse(userMessage);
+      const abogaResponse = await getGeminiResponse(userMessage);
 
       const assistantMsg: Message = {
         id: crypto.randomUUID(),
