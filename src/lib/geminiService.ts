@@ -1,7 +1,7 @@
 import type { AbogaResponse } from './abogaAssistant';
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent';
 
 const SYSTEM_PROMPT = `Eres "ABOGA", un asistente legal informativo para trámites y documentos en el Perú. Tu objetivo es decir las cosas claras y sin rodeos, con enfoque práctico y orientado a la acción.
 
